@@ -1,11 +1,39 @@
 {{$currentNode := .}}
+{{$currentSection := .CurrentSection }}
+
 <div class="docs-menu">
-  <h4>{{ .Section | humanize }}</h4>
+<h4><a href="{{ .URL}}">{{ $currentSection.Title }}</a></h4>
   <ul>
-    {{ range (where .Site.RegularPages "Section" .Section) sort .Site.RegularPages ".Weight" }}
-    <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active {{ end }}">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
+    {{ range $currentSection.Sections }}
+      <li>
+        <a
+          class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{end}}"
+          href="{{ .URL }}"
+        >{{ .Name }}</a>
+
+        {{ if eq .File.UniqueID $currentNode.File.UniqueID }}
+          <ul>
+            {{ range .Pages }}
+              <li><a href="{{ .URL }}">-- {{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+    {{ range $currentSection.Pages }}
+      <li>
+        <a
+          class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{end}}"
+          href="{{ .URL }}">{{ .Name }}</a>
+      </li>
     {{ end }}
   </ul>
 </div>
+
+{{ if ne $currentSection.Parent $currentSection }}
+  {{ if not $currentSection.Parent.IsHome }}
+    <div style="font-size: 90%; margin-top: 40px;">
+      <a href="{{$currentSection.Parent.URL }}">« {{ $currentSection.Parent.Name }}</a>
+    </div>
+  {{ end }}
+{{ end }}

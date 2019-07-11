@@ -2,6 +2,9 @@
   h4 {
     font-size: 1rem;
     font-weight: bold;
+    > a  {
+      color: $black;
+    }
   }
   ul {
     list-style: none;
@@ -13,11 +16,10 @@
       font-weight: 400;
       margin: 0;
       padding: 4px 0 4px 0;
-      &.active {
-        a {
+
+      a.active {
           color: lighten($primary, 10%);
           font-weight: 400;
-        }
       }
       a {
         color: $black;
