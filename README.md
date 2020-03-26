@@ -2,7 +2,9 @@
 
 Whisper is a minimal documentation theme built for Hugo. The design and functionality is intentionally minimal.
 
+
 [Live Demo](https://hugo-whisper.netlify.com/) |
+[Installation](#installation) |
 [Zerostatic Themes](https://www.zerostatic.io/theme/hugo-whisper/)
 
 ![Hugo Whisper Theme screenshot](https://github.com/JugglerX/hugo-whisper-theme/blob/master/images/screenshot-with-border.png)
@@ -47,13 +49,17 @@ Whisper is a minimal documentation theme built for Hugo. The design and function
 
 To use this theme you will need to have Hugo installed. If you don't already have Hugo installed please follow the official [installation guide](https://gohugo.io/getting-started/installing/)
 
-### Check Hugo Version
+### Check Hugo version (Hugo 0.51+ Extended is required)
 
-This theme uses [Hugo Pipes](https://gohugo.io/hugo-pipes/scss-sass/) to compile SCSS and minify assets. Please make sure you have the `Hugo Extended` version installed. If you are not using the extended version this theme will not not compile.
+This theme uses [Hugo Pipes](https://gohugo.io/hugo-pipes/scss-sass/) to compile SCSS and minify assets. Please make sure you have the **Hugo Extended** version installed. If you are not using the extended version this theme will not not compile.
+
+To check your version of Hugo, run:
 
 ```
 hugo version
 ```
+
+This will output the currently installed version of Hugo. Make sure you see `/extended` after the version number, for example `Hugo Static Site Generator v0.51/extended darwin/amd64 BuildDate: unknown` You do not need to use version v0.51 specifically, you can use any version of Hugo above 0.51. It just needs to have the `/extended` part
 
 ### Create a new Hugo site
 
@@ -117,3 +123,7 @@ hugo server
 ```
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
+
+## License
+
+If you fork or copy this theme the LICENSE file and the copyright notice on line 3 (where I am listed as the author) must not be changed. You cannot just replace the copyright line with your own name. Attribution in your README.md or on your site is also welcome but not required.
