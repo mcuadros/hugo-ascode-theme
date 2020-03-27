@@ -18,7 +18,7 @@
       padding: 4px 0 4px 0;
 
       a.active {
-          color: lighten($primary, 10%);
+          color: $primary;
           font-weight: 400;
       }
       a {
