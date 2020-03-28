@@ -3,8 +3,18 @@
 {{ define "header_classes" }}{{ end }}
 
 {{ define "main" }}
+
 <h1 class="title">{{.Title}}</h1>
 <div class="content {{if .Site.Params.enable_anchor_link}}{{ "anchor-link-enabled" }}{{ end }}">
+
+{{ if and (gt .WordCount 400 ) (.Params.toc) }}
+  <h2 id="index">Index</h2>
+<div class="toc">
+    {{.TableOfContents}}
+</div>
+{{ end }}
+
+
   {{.Content}}
 </div>
 </div>
