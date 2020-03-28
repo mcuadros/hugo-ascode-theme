@@ -10,8 +10,10 @@
   {{ .Content }}
 </div>
 
+{{ if eq .Params.summary "true" }}
 {{ range.Pages }}
 {{ .Render "summary" }}
+{{ end }}
 {{ end }}
 
 {{ end }}

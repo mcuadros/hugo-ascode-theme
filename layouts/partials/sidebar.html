@@ -4,22 +4,6 @@
 <div class="docs-menu">
 <h4><a href="{{ .URL}}">{{ $currentSection.Title }}</a></h4>
   <ul>
-    {{ range $currentSection.Sections }}
-      <li>
-        <a
-          class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{end}}"
-          href="{{ .URL }}"
-        >{{ .Name }}</a>
-
-        {{ if eq .File.UniqueID $currentNode.File.UniqueID }}
-          <ul>
-            {{ range .Pages }}
-              <li><a href="{{ .URL }}">-- {{ .Name }}</a></li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </li>
-    {{ end }}
     {{ range $currentSection.Pages }}
       <li>
         <a

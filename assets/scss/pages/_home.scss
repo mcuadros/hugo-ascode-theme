@@ -1,8 +1,18 @@
 .page-home {
   text-align: center;
+  .logo {
+    a {
+      display: none !important;
+    }
+  }
   .title {
     font-weight: lighter;
     font-family: $font-family-base;
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+
   }
   p {
     margin: 0 auto;
@@ -26,3 +36,6 @@
     }
   }
 }
+
+
+
