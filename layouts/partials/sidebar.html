@@ -1,8 +1,7 @@
 {{$currentNode := .}}
 {{$currentSection := .CurrentSection }}
-
 <div class="docs-menu">
-<h4><a href="{{ .URL}}">{{ $currentSection.Title }}</a></h4>
+<h4><a href="{{ .CurrentSection.URL }}">{{ $currentSection.Title }}</a></h4>
   <ul>
     {{ range $currentSection.Pages }}
       <li>
