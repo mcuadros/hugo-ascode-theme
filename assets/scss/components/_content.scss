@@ -4,12 +4,8 @@
     border-radius: 2px;
     margin-bottom: 20px;
 
-    .nf, .s, .s2 {
+    .nf, .s, .s1, .s2 {
       color: $primary;
-    }
-
-    .s1 {
-      color: lighten($primary, 20%);
     }
   }
   code {
@@ -114,6 +110,9 @@
     letter-spacing: -0.01em;
     font-family: $font-family-base;
     margin-bottom: 20px;
+    code {
+      font-size: 2.0rem;
+    }
   }
   h3 {
     font-size: 1.6rem;
